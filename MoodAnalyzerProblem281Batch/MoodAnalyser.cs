@@ -20,11 +20,18 @@ namespace MoodAnalyzerProblem281Batch
         /// <param name="meassage""></param>
         public string AnalyseMood()
         {
-            if (this.meassage.Contains ("Sad"))
+            try
             {
-                return "SAD";
+                if (this.meassage.Contains("Sad"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else
+            catch 
             {
                 return "HAPPY";
             }

@@ -22,5 +22,24 @@ namespace MoodAnalyzerMstest281Batch
             // Assert
             Assert.AreEqual(expected, mood);
         }
+
+        /// <summary>
+        ///  TC 1.2 & 2.1: Given ?I am in HAPPY Mood? and null meassage Should Return HAPPY
+        /// </summary>
+        [TestMethod]
+        [DataRow("I am in Happy Mood")]
+        [DataRow(null)]
+        public void GivenHappyMoodShouldReturnHappy(string meassage)
+        {
+            // Arrange
+            String expected = "HAPPY";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(meassage);
+
+            // Act
+            string mood = moodAnalyser.AnalyseMood();
+
+            // Assert
+            Assert.AreEqual(expected, mood);
+        }
     }
 }
