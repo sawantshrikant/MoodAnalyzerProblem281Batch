@@ -27,7 +27,7 @@ namespace MoodAnalyzerProblem281Batch
         ///</summary>
         /// <param name="Type"></param>
         /// <param name="meassage"></param>
-        public MoodAnalyserCustom(ExceptionType Type, string meassage) : base(meassage)
+        public MoodAnalyserCustomException(ExceptionType Type, string meassage) : base(meassage)
         {
             this.type = Type;
         }

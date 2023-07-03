@@ -60,5 +60,7 @@ namespace MoodAnalyzerProblem281Batch
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_MESSAGE, "Mood should not be null");
             }
         }
+
+
     }
 }
