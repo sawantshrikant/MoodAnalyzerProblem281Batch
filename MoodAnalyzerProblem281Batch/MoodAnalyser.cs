@@ -20,20 +20,44 @@ namespace MoodAnalyzerProblem281Batch
         /// <param name="meassage""></param>
         public string AnalyseMood()
         {
+            //try
+            //{
+            //    if (this.meassage.Contains("Sad"))
+            //    {
+            //        return "SAD";
+            //    }
+            //    else
+            //    {
+            //        return "HAPPY";
+            //    }
+            //}
+            //catch 
+            //{
+            //    return "HAPPY";
+            //}
+
+
             try
             {
+                if (this.meassage.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MEASSAGE, "Mood should not be Empty");
+                }
+
                 if (this.meassage.Contains("Sad"))
                 {
                     return "SAD";
                 }
+
                 else
                 {
                     return "HAPPY";
                 }
             }
-            catch 
+
+            catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.Null_MESSAGE, "Mood should not be null");
             }
         }
     }

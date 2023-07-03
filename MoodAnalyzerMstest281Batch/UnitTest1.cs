@@ -41,5 +41,26 @@ namespace MoodAnalyzerMstest281Batch
             // Assert
             Assert.AreEqual(expected, mood);
         }
+
+
+        /// <summary>
+        /// TC 3.2: Given Empty Mood Should Throw MoodAnalysisException Indicating Empty Mood.
+        /// Given-When-Then
+        /// </summary>
+        public void Given_Empty_Mood_Should_Throw_MoodAnalysisException_Indicating_EmptyMood()
+        {
+            try
+            {
+                string meassage = "";
+                MoodAnalyser moodAnalyse = new MoodAnalyser(meassage);
+                string mood = moodAnalyse.AnalyseMood();
+
+            }
+
+            catch (MoodAnalyserCustomException e) 
+            {
+                Assert.AreEqual("Mood should not be Empty", e.Message);
+            }
+        }
     }
 }
